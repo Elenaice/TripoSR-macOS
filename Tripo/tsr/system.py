@@ -266,7 +266,6 @@ class TSR(BaseModule):
             )
 
     def extract_mesh(self, scene_codes, has_vertex_color, resolution: int = 256, threshold: float = 25.0):
-        print("COARSE TO FINE TEST")
         self.set_marching_cubes_resolution(resolution)
         meshes = []
         for scene_code in scene_codes:
@@ -278,7 +277,6 @@ class TSR(BaseModule):
             )
             
             bbox = self.find_object_bbox(scene_code)
-            print("bbox:", bbox)
             points = self.create_bbox_grid(
                 bbox,
                 resolution,
